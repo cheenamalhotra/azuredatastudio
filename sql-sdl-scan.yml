@@ -141,9 +141,9 @@ stages:
           - powershell: yarn compile
             displayName: Compile
 
-          - task: CodeQL3000Finalize@0
-            displayName: CodeQL Finalize
-            condition: eq(variables['Codeql.enabled'], 'True')
+          # - task: CodeQL3000Finalize@0
+          #   displayName: CodeQL Finalize
+          #   condition: eq(variables['Codeql.enabled'], 'True')
 
           - powershell: yarn gulp "vscode-symbols-win32-$(VSCODE_ARCH)"
             env:
